@@ -1,0 +1,40 @@
+@import "styling";
+
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+  background-color: $background;
+}
+
+mat-sidenav {
+  width: 250px;
+  background-color: $dark;
+  overflow-x: hidden;
+}
+
+main {
+  padding: 10px;
+  min-height: 33vw;
+}
+
+.footer {
+  position: bottom;
+  width: 100%;
+}
+
+::ng-deep .action-ok {
+  color: #ffffff !important;
+  background-color: rgb(47, 89, 228) !important;
+  text-align: center;
+  width: 600px;
+  height: 80px;
+}
+
+::ng-deep .action-error {
+  color: #ffffff !important;
+  background-color: rgb(197, 67, 58) !important;
+  text-align: center;
+  width: 600px;
+  height: 80px;
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+//fonts
+$main-font: 'Quicksand',
+sans-serif;
+$secondary-font: 'Roboto',
+sans-serif;
+
+//colors$darkest: #000000;
+$darker: #212121;
+$dark: #333333;
+$background: #eaeaea;
+$light: #ffffff;
+$accent: rgb(0,128,0);
+
+//cards
+.content-card {
+  font-family: $secondary-font;
+  border-style: none;
+  background-color: $light;
+  margin: 1%;
+  padding: 5px;
+  min-width: 1000px;
+
+  &.title {
+    margin: 0 0 0 15px;
+  }
+}
+
+//elements
+.active-list-item {
+  width: inherit;
+  color: $light;
+  background: $darker;
+  border-left: 3px solid $accent;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+button {
+  background-color: $accent;
+  color: $darker;
+  margin: 5px;
+  border-radius: 0px;
+  font-weight: 400;
+
+  &.cancel-button {
+    background-color: lightgray;
+    color: gray;
+  }
+}
+
+.chip {
+  background-color: $accent !important;
+  color: $darker;
+  margin: 5px;
+  border-radius: 0px;
+  font-weight: 400;
+}
+
+.input {
+  border: none !important;
+  border-color: transparent !important;
+  outline: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: $secondary-font;
+  color: $darker;
+  font-weight: 500;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-family: $secondary-font;
+  color: $darker;
+  font-weight: 400;
+  font-size: 30px;
+  margin: 0;
+  padding: 15px;
+}
+
+table {
+  min-width: 1000px;
+}

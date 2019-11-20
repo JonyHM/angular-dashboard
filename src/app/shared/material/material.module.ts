@@ -32,6 +32,7 @@ import {
   imports: [
     MatTabsModule,
     MatSidenavModule,
+    MatTabsModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -61,6 +62,7 @@ import {
   exports: [
     MatTabsModule,
     MatSidenavModule,
+    MatTabsModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

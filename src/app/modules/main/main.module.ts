@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SlideComponent } from './slide.component';
-import { SlideRoutingModule } from './slide-routing.module';
+import { MainComponent } from './main.component';
+import { MainRoutingModule } from './main-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [SlideComponent],
+  declarations: [MainComponent],
   imports: [
     CommonModule,
-    SlideRoutingModule,
+    MainRoutingModule,
     SharedModule
   ]
 })
-export class SlideModule { }
+export class MainModule { }

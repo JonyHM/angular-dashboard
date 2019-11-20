@@ -18,7 +18,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   exports: [
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    MaterialModule
   ]
 })
 export class SharedModule { }

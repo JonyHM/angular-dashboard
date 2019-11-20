@@ -1,0 +1,28 @@
+@import "styling";
+
+.options-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 5%;
+}
+
+.option {
+  padding: 10px;
+  margin: 5px;
+  margin-left: 1%;
+  width: 5%;
+  min-width: fit-content;
+  color: aliceblue;
+  border-radius: 5%;
+}
+
+.welcome-text {
+  margin-left: 3%;
+}
+
+span {
+  color: $accent;
+  font-weight: bold;
+}

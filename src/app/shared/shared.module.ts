@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './header/header.component';
+import { RegisterService } from './register/service/register.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,9 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent,
     SidenavComponent,
     MaterialModule
+  ],
+  providers: [
+    RegisterService
   ]
 })
 export class SharedModule { }

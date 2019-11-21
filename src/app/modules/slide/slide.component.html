@@ -1,13 +1,22 @@
 <div id="planes-row">
-  <div class="planes-card"><img alt="Plane Image" src="../../../assets/CFI.jpg"></div>
-  <div class="planes-card">Vinhão 2</div>
-  <div class="planes-card">Vinhão 3</div>
-  <div class="planes-card">Vinhão 4</div>
+  <div class="planes-card">
+    <img alt="Plane Image" [ngClass]="{'selected-row': index === 0}" (click)="mudar(0)" class="plane" src="../../../assets/CF-1.png">
+  </div>
+  <div class="planes-card">
+    <img alt="Plane Image" (click)="mudar(1)" [ngClass]="{'selected-row': index === 1}" class="plane" src="../../../assets/CF-3.png">
+  </div>
+  <div class="planes-card">
+    <img alt="Plane Image" (click)="mudar(2)" [ngClass]="{'selected-row': index === 2}" class="plane" src="../../../assets/ELP.png">
+  </div>
+  <div class="planes-card">
+    <img alt="Plane Image" (click)="mudar(3)" [ngClass]="{'selected-row': index === 3}" class="plane" src="../../../assets/OW.png">
+  </div>
 </div>
 <div class="content-card">
-  <mat-tab-group>
-    <mat-tab label="First"> Content 1 </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
+  <mat-tab-group [selectedIndex]="index">
+    <mat-tab> Content 1 </mat-tab>
+    <mat-tab> Content 2 </mat-tab>
+    <mat-tab> Content 3 </mat-tab>
+    <mat-tab> Content 3 </mat-tab>
   </mat-tab-group>
 </div>

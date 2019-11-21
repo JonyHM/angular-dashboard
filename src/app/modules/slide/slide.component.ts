@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlideComponent implements OnInit {
 
+  public index: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.index = 3;
+  }
+
+  public mudar(numero: number) {
+    this.index = numero;
   }
 
 }

@@ -14,6 +14,19 @@
 </div>
 
 <div class="content-card">
+  <div class="content-card title">
+    <div class="form-options">
+      
+      <mat-slide-toggle
+        [color]="color"
+        [checked]="enableCarousel"
+        (change)="enableCarousel()">
+      </mat-slide-toggle>
+
+    </div>
+  </div>
+
+
   <mat-tab-group class="header-less-tabs" [selectedIndex]="index">
     <mat-tab> 
 
@@ -27,8 +40,8 @@
 
             <div class="card-detail">
               <div>{{register.posto}}</div>
-              <!-- <div>{{register.avg_fimreal_fimplan}}</div>
-              <div>{{register.sum_fimreal_fimplan}}</div> -->
+              <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
+              <div>Total: {{register.sum_fimreal_fimplan}}</div>
             </div>
           </div>
         </div>
@@ -48,8 +61,8 @@
 
             <div class="card-detail">
               <div>{{register.posto}}</div>
-              <!-- <div>{{register.avg_fimreal_fimplan}}</div>
-              <div>{{register.sum_fimreal_fimplan}}</div> -->
+              <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
+              <div>Total: {{register.sum_fimreal_fimplan}}</div>
             </div>
           </div>
         </div>
@@ -69,8 +82,8 @@
 
             <div class="card-detail">
               <div>{{register.posto}}</div>
-              <!-- <div>{{register.avg_fimreal_fimplan}}</div>
-              <div>{{register.sum_fimreal_fimplan}}</div> -->
+              <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
+              <div>Total: {{register.sum_fimreal_fimplan}}</div>
             </div>
           </div>
         </div>
@@ -90,8 +103,8 @@
 
             <div class="card-detail">
               <div>{{register.posto}}</div>
-              <!-- <div>{{register.avg_fimreal_fimplan}}</div>
-              <div>{{register.sum_fimreal_fimplan}}</div> -->
+              <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
+              <div>Total: {{register.sum_fimreal_fimplan}}</div>
             </div>
           </div>
         </div>

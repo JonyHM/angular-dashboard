@@ -37,8 +37,8 @@
   margin: 2px;
   min-width: 2em;
   max-width: 20em;
-  min-height: 4em;
-  max-height: 5em;
+  min-height: 5em;
+  max-height: 7em;
 }
 
 ::ng-deep .header-less-tabs .mat-tab-header {
@@ -57,4 +57,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+ 
+.form-options {
+  display: flex;
+  align-items: center;
+  align-content: center;
 }

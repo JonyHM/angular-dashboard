@@ -12,6 +12,7 @@ import {
   MatTabsModule,
   MatTableModule,
   MatSortModule,
+  MatSlideToggleModule,
   MatPaginatorModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
@@ -31,7 +32,6 @@ import {
 @NgModule({
   imports: [
     MatTabsModule,
-    MatSidenavModule,
     MatTabsModule,
     MatToolbarModule,
     MatIconModule,
@@ -39,6 +39,8 @@ import {
     MatListModule,
     MatMenuModule,
     MatTableModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
     MatSortModule,
     MatInputModule,
     MatFormFieldModule,
@@ -61,7 +63,6 @@ import {
   ],
   exports: [
     MatTabsModule,
-    MatSidenavModule,
     MatTabsModule,
     MatToolbarModule,
     MatIconModule,
@@ -69,6 +70,8 @@ import {
     MatListModule,
     MatMenuModule,
     MatTableModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
     MatSortModule,
     MatInputModule,
     MatFormFieldModule,

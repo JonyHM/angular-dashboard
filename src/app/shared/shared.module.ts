@@ -5,25 +5,24 @@ import { NgModule } from '@angular/core';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './header/header.component';
-import { RegisterService } from './register/service/register.service';
+import { RegisterModule } from './register/register.module';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    RegisterModule
   ],
   exports: [
     HeaderComponent,
     SidenavComponent,
-    MaterialModule
-  ],
-  providers: [
-    RegisterService
+    MaterialModule,
+    RegisterModule
   ]
 })
 export class SharedModule { }

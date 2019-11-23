@@ -13,6 +13,7 @@ $dark: #333333;
 $background: #eaeaea;
 $light: #ffffff;
 $accent: #0b1b45;
+$select: #57A0D3;
 
 //cards
 .content-card {
@@ -33,7 +34,7 @@ $accent: #0b1b45;
   width: inherit;
   color: $light;
   background: $darker;
-  border-left: 3px solid $accent;
+  border-left: 3px solid $select;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -45,6 +46,7 @@ button {
   margin: 5px;
   border-radius: 0px;
   font-weight: 400;
+  color: $light;
 
   &.cancel-button {
     background-color: lightgray;
@@ -89,4 +91,18 @@ h3 {
 
 table {
   min-width: 1000px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

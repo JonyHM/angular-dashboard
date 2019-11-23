@@ -1,1 +1,62 @@
 @import "styling";
+
+.content-card .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center !important;
+}
+  
+.form-options {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: row;
+  margin: 3px;
+  margin-right: 2%;
+  padding: 6px;
+  border: 1px solid lightgray;
+}
+
+.search-button {
+  margin: 1.5px;
+}
+
+.user-detail-content {
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+.select-range {
+  width: 33vw;
+}
+
+.register-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1%;
+  margin: 2px;
+  min-width: 2em;
+  max-width: 20em;
+  min-height: 5em;
+  max-height: 7em;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

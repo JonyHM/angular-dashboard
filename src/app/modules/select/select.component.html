@@ -1,3 +1,49 @@
 <div class="content-card">
-  Select
+  <div class="content-card title">
+  
+    <div class="form-options">
+      
+      Linha: 
+      <select class="form-control search-box" (change)="this.getRanges($event.target.value)">
+        <option disabled selected value> -- selecione uma linha -- </option>
+        <option>CF-1</option>
+        <option>CF-3</option>
+        <option>ELP</option>
+        <option>OW</option>
+      </select>
+
+      Range:
+      <form #form="ngForm" class="select-range">
+        <select #rangeSelect="ngModel" [(ngModel)]="range" name="rangeSelect" class="form-control search-box">
+          <option selected value> -- selecione um range -- </option>
+          <option *ngFor="let range of ranges">{{range}}</option>
+        </select>
+      </form>
+  
+      <button mat-button class="search-button" (click)="search()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="content-card">
+    <div class="row cards">
+      <div class="col-2 p-1 register-content" 
+        *ngFor="let register of register$ | async"
+        [class.bg-primary]="register.avg_fimreal_fimplan > 0"
+        [class.bg-danger]="register.avg_fimreal_fimplan < 0"
+        [class.bg-success]="register.avg_fimreal_fimplan == 0">
+
+        <div class="card-detail">
+          <div>{{register.posto}}</div>
+          <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
+          <div>Total: {{register.sum_fimreal_fimplan}}</div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
 </div>
+

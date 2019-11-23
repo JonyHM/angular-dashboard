@@ -1,22 +1,102 @@
 <div id="planes-row">
-  <div class="planes-card">
-    <img alt="Plane Image" [ngClass]="{'selected-row': index === 0}" (click)="mudar(0)" class="plane" src="../../../assets/CF-1.png">
+  <div class="planes-card cursor-pointer" [class.selected-row]="this.index===0">
+    <img alt="Plane Image" (click)="change(0, 'CF-1', this)" class="plane" src="../../../assets/CF-1.png">
   </div>
-  <div class="planes-card">
-    <img alt="Plane Image" (click)="mudar(1)" [ngClass]="{'selected-row': index === 1}" class="plane" src="../../../assets/CF-3.png">
+  <div class="planes-card cursor-pointer" [class.selected-row]="this.index===1">
+    <img alt="Plane Image" (click)="change(1, 'CF-3', this)" class="plane" src="../../../assets/CF-3.png">
   </div>
-  <div class="planes-card">
-    <img alt="Plane Image" (click)="mudar(2)" [ngClass]="{'selected-row': index === 2}" class="plane" src="../../../assets/ELP.png">
+  <div class="planes-card cursor-pointer" [class.selected-row]="this.index===2">
+    <img alt="Plane Image" (click)="change(2, 'Portas Legacy', this)" class="plane" src="../../../assets/ELP.png">
   </div>
-  <div class="planes-card">
-    <img alt="Plane Image" (click)="mudar(3)" [ngClass]="{'selected-row': index === 3}" class="plane" src="../../../assets/OW.png">
+  <div class="planes-card cursor-pointer" [class.selected-row]="this.index===3">
+    <img alt="Plane Image" (click)="change(3, 'OW', this)" class="plane" src="../../../assets/OW.png">
   </div>
 </div>
+
 <div class="content-card">
-  <mat-tab-group [selectedIndex]="index">
-    <mat-tab> Content 1 </mat-tab>
-    <mat-tab> Content 2 </mat-tab>
-    <mat-tab> Content 3 </mat-tab>
-    <mat-tab> Content 3 </mat-tab>
+  <mat-tab-group class="header-less-tabs" [selectedIndex]="index">
+    <mat-tab> 
+
+      <div class="content-card">
+        <div class="row cards">
+          <div class="col-2 p-1 register-content" 
+            *ngFor="let register of register$ | async"
+            [class.bg-primary]="register.avg_fimreal_fimplan > 0"
+            [class.bg-danger]="register.avg_fimreal_fimplan < 0"
+            [class.bg-success]="register.avg_fimreal_fimplan == 0">
+
+            <div class="card-detail">
+              <div>{{register.posto}}</div>
+              <!-- <div>{{register.avg_fimreal_fimplan}}</div>
+              <div>{{register.sum_fimreal_fimplan}}</div> -->
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    </mat-tab>
+
+    <mat-tab> 
+
+      <div class="content-card">
+        <div class="row cards">
+          <div class="col-2 p-1 register-content" 
+            *ngFor="let register of register$ | async"
+            [class.bg-primary]="register.avg_fimreal_fimplan > 0"
+            [class.bg-danger]="register.avg_fimreal_fimplan < 0"
+            [class.bg-success]="register.avg_fimreal_fimplan == 0">
+
+            <div class="card-detail">
+              <div>{{register.posto}}</div>
+              <!-- <div>{{register.avg_fimreal_fimplan}}</div>
+              <div>{{register.sum_fimreal_fimplan}}</div> -->
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    </mat-tab>
+
+    <mat-tab>
+
+      <div class="content-card">
+        <div class="row cards">
+          <div class="col-2 p-1 register-content" 
+            *ngFor="let register of register$ | async"
+            [class.bg-primary]="register.avg_fimreal_fimplan > 0"
+            [class.bg-danger]="register.avg_fimreal_fimplan < 0"
+            [class.bg-success]="register.avg_fimreal_fimplan == 0">
+
+            <div class="card-detail">
+              <div>{{register.posto}}</div>
+              <!-- <div>{{register.avg_fimreal_fimplan}}</div>
+              <div>{{register.sum_fimreal_fimplan}}</div> -->
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    </mat-tab>
+
+    <mat-tab>
+
+      <div class="content-card">
+        <div class="row cards">
+          <div class="col-2 p-1 register-content" 
+            *ngFor="let register of register$ | async"
+            [class.bg-primary]="register.avg_fimreal_fimplan > 0"
+            [class.bg-danger]="register.avg_fimreal_fimplan < 0"
+            [class.bg-success]="register.avg_fimreal_fimplan == 0">
+
+            <div class="card-detail">
+              <div>{{register.posto}}</div>
+              <!-- <div>{{register.avg_fimreal_fimplan}}</div>
+              <div>{{register.sum_fimreal_fimplan}}</div> -->
+            </div>
+          </div>
+        </div>
+      </div> 
+
+    </mat-tab>
   </mat-tab-group>
 </div>

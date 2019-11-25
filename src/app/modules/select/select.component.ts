@@ -11,9 +11,9 @@ import { RegisterService } from 'src/app/shared/register/service/register.servic
 })
 export class SelectComponent implements OnInit {
 
-  private ranges: Array<string> = [];
+  public ranges: Array<string> = [];
   private line: string;
-  private range: string;
+  public range: string;
   public register$: Observable<Array<Register>>;
 
   constructor(private registerService: RegisterService) { }

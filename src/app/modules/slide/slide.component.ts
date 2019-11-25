@@ -16,38 +16,43 @@ export class SlideComponent implements OnInit {
 
   public index: number;
   public color: string;
-  public isCarouselEnabled: Boolean;
+  public isCarouselEnabled: boolean;
   public register$: Observable<Array<Register>>;
   public planes: Array<Plane> = [];
+  public carouselToggle: string;
+  private timeout: any;
 
-  constructor(private registerService: RegisterService) { 
+  constructor(private registerService: RegisterService) {
     this.planes = new Helper().getData();
   }
 
   ngOnInit() {
     this.isCarouselEnabled = true;
+    this.carouselToggle = !this.isCarouselEnabled ? 'Ativar carrossel' : 'Desativar carrossel';
     this.color = 'primary';
     this.index = 0;
     this.change(0, 'CF-1', this);
   }
 
-  public change(index: number, line: string, scope: any): void {    
-    var self = scope;
+  public change(index: number, line: string, scope: any): void {
+    const self = scope;
+    clearTimeout(self.timeout);
     self.index = index;
     self.register$ = self.registerService.getLinhaGroupByPosto(line);
-    self.carousel();   
+    self.carousel();
   }
 
   public enableCarousel() {
     this.isCarouselEnabled = !this.isCarouselEnabled;
-    this.carousel();    
+    this.carouselToggle = !this.isCarouselEnabled ? 'Ativar carrossel' : 'Desativar carrossel';
+    this.carousel();
   }
 
   public carousel(): void {
-    let plane: Plane = this.planes[(this.index + 1) % this.planes.length];
-    
-    if(this.isCarouselEnabled) {
-      setTimeout(this.change, 30000, plane.index, plane.line, this);
+    const plane: Plane = this.planes[(this.index + 1) % this.planes.length];
+
+    if (this.isCarouselEnabled) {
+      this.timeout = setTimeout(this.change, 30000, plane.index, plane.line, this);
     }
   }
 

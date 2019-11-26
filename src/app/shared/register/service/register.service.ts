@@ -33,7 +33,7 @@ export class RegisterService {
   public getLinhaRangeGroupByPosto(linha: string, range: string): Observable<Register[]> {
     console.log(linha);
     console.log(range);
-    
+
     if (range !== '') {
       return this.http.get<Register[]>(this.urlbase + '/group/' + linha + '/' + range)
         .pipe(

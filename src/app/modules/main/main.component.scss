@@ -6,6 +6,15 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 5%;
+  margin-top: 7%
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2%;
 }
 
 .option {
@@ -19,7 +28,16 @@
 }
 
 .welcome-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-left: 3%;
+  margin-top: 2%;
+}
+
+#logo {
+  margin-bottom: 2.5%;
 }
 
 span {

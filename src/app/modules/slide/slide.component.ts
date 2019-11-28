@@ -52,7 +52,7 @@ export class SlideComponent implements OnInit {
     const plane: Plane = this.planes[(this.index + 1) % this.planes.length];
 
     if (this.isCarouselEnabled) {
-      this.timeout = setTimeout(this.change, 30000, plane.index, plane.line, this);
+      this.timeout = setTimeout(this.change, 3000, plane.index, plane.line, this);
     }
   }
 

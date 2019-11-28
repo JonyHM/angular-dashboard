@@ -12,9 +12,8 @@
   font-family: $secondary-font;
   border-style: none;
   background-color: $light;
-  margin: 1%;
-  padding: 5px;
-  max-width: 15vw;
+  min-width: 2vw;
+  max-width: 10vw;
   border: 2px solid $accent;
   display: flex;
   align-items: center;
@@ -22,7 +21,12 @@
 }
 
 .plane {
+  min-width: 2vw;
   max-width: 10vw;
+  // width: 20vw;
+  // height: 10vw;
+  min-height: 6vw;
+  max-height: 7vw;
 }
 
 .selected-row {
@@ -36,9 +40,9 @@
   margin-bottom: 1%;
   margin: 2px;
   min-width: 2em;
-  max-width: 20em;
-  min-height: 5em;
-  max-height: 7em;
+  max-width: 14em;
+  min-height: 4em;
+  max-height: 6em;
 }
 
 ::ng-deep .header-less-tabs .mat-tab-header {

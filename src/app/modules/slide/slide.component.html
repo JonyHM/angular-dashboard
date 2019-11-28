@@ -1,37 +1,25 @@
-<div id="planes-row">
-  <div class="planes-card cursor-pointer" matTooltip="CF-1" [class.selected-row]="this.index===0">
-    <img alt="Plane Image" (click)="change(0, 'CF-1', this)" class="plane" src="../../../assets/CF-1.png">
-  </div>
-
-  <div class="planes-card cursor-pointer" matTooltip="CF-3" [class.selected-row]="this.index===1">
-    <img alt="Plane Image" (click)="change(1, 'CF-3', this)" class="plane" src="../../../assets/CF-3.png">
-  </div>
-  <div class="planes-card cursor-pointer" matTooltip="ELP" [class.selected-row]="this.index===2">
-    <img alt="Plane Image" (click)="change(2, 'Portas Legacy', this)" class="plane" src="../../../assets/ELP.png">
-  </div>
-  <div class="planes-card cursor-pointer" matTooltip="OW" [class.selected-row]="this.index===3">
-    <img alt="Plane Image" (click)="change(3, 'OW', this)" class="plane" src="../../../assets/OW.png">
+<div class="row">
+  <div class="col-1" *ngFor="let plane of planes">
+    <div class="planes-card cursor-pointer" [matTooltip]="plane.line" [class.selected-row]="this.index===plane.index">
+      <img [alt]="plane.alt" (click)="change(plane.index, plane.line, this)" class="plane" [src]="plane.imagePath">
+    </div>
   </div>
 </div>
 
 <div class="content-card">
   <div class="content-card title">
     <div class="form-options">
-
       <mat-slide-toggle
         [color]="color"
         [checked]="enableCarousel"
         (change)="enableCarousel()"
         [matTooltip]="carouselToggle">
       </mat-slide-toggle>
-
     </div>
   </div>
 
-
   <mat-tab-group class="header-less-tabs" [selectedIndex]="index">
-    <mat-tab>
-
+    <mat-tab *ngFor="let plane of planes">
       <div class="content-card">
         <div class="row cards">
           <div class="col-2 p-1 register-content"
@@ -42,76 +30,10 @@
 
             <div class="card-detail">
               <div>{{register.posto}}</div>
-              <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
-              <div>Total: {{register.sum_fimreal_fimplan}}</div>
             </div>
           </div>
         </div>
       </div>
-
-    </mat-tab>
-
-    <mat-tab>
-
-      <div class="content-card">
-        <div class="row cards">
-          <div class="col-2 p-1 register-content"
-            *ngFor="let register of register$ | async"
-            [class.bg-primary]="register.avg_fimreal_fimplan > 0"
-            [class.bg-danger]="register.avg_fimreal_fimplan < 0"
-            [class.bg-success]="register.avg_fimreal_fimplan == 0">
-
-            <div class="card-detail">
-              <div>{{register.posto}}</div>
-              <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
-              <div>Total: {{register.sum_fimreal_fimplan}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </mat-tab>
-
-    <mat-tab>
-
-      <div class="content-card">
-        <div class="row cards">
-          <div class="col-2 p-1 register-content"
-            *ngFor="let register of register$ | async"
-            [class.bg-primary]="register.avg_fimreal_fimplan > 0"
-            [class.bg-danger]="register.avg_fimreal_fimplan < 0"
-            [class.bg-success]="register.avg_fimreal_fimplan == 0">
-
-            <div class="card-detail">
-              <div>{{register.posto}}</div>
-              <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
-              <div>Total: {{register.sum_fimreal_fimplan}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </mat-tab>
-
-    <mat-tab>
-
-      <div class="content-card">
-        <div class="row cards">
-          <div class="col-2 p-1 register-content"
-            *ngFor="let register of register$ | async"
-            [class.bg-primary]="register.avg_fimreal_fimplan > 0"
-            [class.bg-danger]="register.avg_fimreal_fimplan < 0"
-            [class.bg-success]="register.avg_fimreal_fimplan == 0">
-
-            <div class="card-detail">
-              <div>{{register.posto}}</div>
-              <!-- <div>{{register.avg_fimreal_fimplan}}</div> -->
-              <div>Total: {{register.sum_fimreal_fimplan}}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </mat-tab>
   </mat-tab-group>
 </div>

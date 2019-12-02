@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 
 import { Register } from 'src/app/shared/register/model/register';
 import { RegisterService } from 'src/app/shared/register/service/register.service';
+import { Part } from 'src/app/shared/part/model/part';
+import { Helper } from '../slide/helper';
 
 @Component({
   selector: 'app-select',
@@ -11,14 +13,20 @@ import { RegisterService } from 'src/app/shared/register/service/register.servic
 })
 export class SelectComponent implements OnInit {
 
-  public ranges: Array<string> = [];
+  public alt: String;
   private line: string;
   public range: string;
+  public lineDesc: String;
+  public imagePath: String;
+  public imageVisible: boolean;
+  public lines: Array<Part> = [];
+  public ranges: Array<string> = [];
   public register$: Observable<Array<Register>>;
 
   constructor(private registerService: RegisterService) { }
 
   ngOnInit() {
+    this.lines = new Helper().getData();
   }
 
   public getRanges(line: string) {
@@ -32,7 +40,15 @@ export class SelectComponent implements OnInit {
   }
 
   public search(): void {
+    this.lineDesc = this.line;
     this.register$ = this.registerService.getLinhaRangeGroupByPosto(this.line, this.range);
+    this.lines.forEach(line => {
+      if (line.line == this.line) {
+        this.imagePath = line.imagePath;
+        this.alt = line.alt;
+        this.imageVisible = true;
+      }
+    });
   }
 
 }

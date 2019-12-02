@@ -6,10 +6,7 @@
       Linha:
       <select class="form-control search-box" (change)="this.getRanges($event.target.value)">
         <option disabled selected value> -- selecione uma linha -- </option>
-        <option>CF-1</option>
-        <option>CF-3</option>
-        <option>ELP</option>
-        <option>OW</option>
+        <option *ngFor="let line of lines">{{line.line}}</option>
       </select>
 
       Range:
@@ -28,7 +25,13 @@
 
   <mat-divider></mat-divider>
 
-  <div class="content-card">
+  <div class="content-card lines-content">
+    <div class="img-card" *ngIf="imageVisible">
+      <div id="img-content">
+        <img [src]="this.imagePath" alt="this.alt">
+        <div>Linha: {{this.lineDesc}}</div>
+      </div>
+    </div>
     <div class="row cards">
       <div class="col-2 p-1 register-content"
         *ngFor="let register of register$ | async"

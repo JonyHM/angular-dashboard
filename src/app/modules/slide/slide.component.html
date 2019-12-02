@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-1" *ngFor="let plane of planes">
-    <div class="planes-card cursor-pointer" [matTooltip]="plane.line" [class.selected-row]="this.index===plane.index">
-      <img [alt]="plane.alt" (click)="change(plane.index, plane.line, this)" class="plane" [src]="plane.imagePath">
+  <div class="col-1" *ngFor="let part of parts">
+    <div class="planes-card cursor-pointer" [matTooltip]="part.line" [class.selected-row]="this.index===part.index">
+      <img [alt]="part.alt" (click)="change(part.index, part.line, this)" class="plane" [src]="part.imagePath">
     </div>
   </div>
 </div>
@@ -19,7 +19,7 @@
   </div>
 
   <mat-tab-group class="header-less-tabs" [selectedIndex]="index">
-    <mat-tab *ngFor="let plane of planes">
+    <mat-tab *ngFor="let part of parts">
       <div class="content-card">
         <div class="row cards">
           <div class="col-2 p-1 register-content"

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { RegisterService } from 'src/app/shared/register/service/register.service';
 import { Register } from 'src/app/shared/register/model/register';
-import { Plane } from 'src/app/shared/plane/model/plane';
+import { Part } from 'src/app/shared/part/model/part';
 import { Helper } from './helper';
 
 
@@ -18,12 +18,12 @@ export class SlideComponent implements OnInit {
   public color: string;
   public isCarouselEnabled: boolean;
   public register$: Observable<Array<Register>>;
-  public planes: Array<Plane> = [];
+  public parts: Array<Part> = [];
   public carouselToggle: string;
   private timeout: any;
 
   constructor(private registerService: RegisterService) {
-    this.planes = new Helper().getData();
+    this.parts = new Helper().getData();
   }
 
   ngOnInit() {
@@ -49,10 +49,10 @@ export class SlideComponent implements OnInit {
   }
 
   public carousel(): void {
-    const plane: Plane = this.planes[(this.index + 1) % this.planes.length];
+    const plane: Part = this.parts[(this.index + 1) % this.parts.length];
 
     if (this.isCarouselEnabled) {
-      this.timeout = setTimeout(this.change, 3000, plane.index, plane.line, this);
+      this.timeout = setTimeout(this.change, 30000, plane.index, plane.line, this);
     }
   }
 

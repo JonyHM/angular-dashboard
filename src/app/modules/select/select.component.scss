@@ -60,4 +60,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1vw;
+}
+
+.lines-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.img-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#img-content {
+  border: 2px solid $accent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }

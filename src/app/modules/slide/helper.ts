@@ -1,7 +1,7 @@
-import { Plane } from 'src/app/shared/plane/model/plane';
+import { Part } from 'src/app/shared/part/model/part';
 
 export class Helper {
-  public getData(): Plane[] {
+  public getData(): Part[] {
     return [
       {
         alt: 'CF-1 parts',
